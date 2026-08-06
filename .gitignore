@@ -1,0 +1,34 @@
+# IntelliJ IDEA
+.idea/
+*.iml
+*.ipr
+*.iws
+out/
+
+# Maven and Java
+target/
+*.class
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
+
+# Node / React
+node_modules/
+dist/
+build/
+.npm/
+.yarn/
+.pnp.*
+
+# DuckDB and local datasets
+*.duckdb
+*.duckdb.wal
+*.duckdb.tmp
+datasets/**
+!datasets/.gitkeep
+
+# Environment and OS files
+.env
+.env.*
+!.env.example
+.DS_Store
+Thumbs.db
