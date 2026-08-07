@@ -24,7 +24,7 @@ class AssetStatusTest {
     @Test
     @DisplayName("should have exactly 4 enum values")
     void testEnumValuesCount() {
-        MarketType[] values = MarketType.values();
+        AssetStatus[] values = AssetStatus.values();
         assertEquals(4, values.length, "AssetStatus should have exactly 4 values");
     }
 
