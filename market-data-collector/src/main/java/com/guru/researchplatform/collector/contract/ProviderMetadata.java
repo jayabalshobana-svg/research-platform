@@ -1,4 +1,4 @@
-package com.guru.researchplatform.marketdatacollector.provider;
+package com.guru.researchplatform.collector.contract;
 
 import java.util.Objects;
 

@@ -1,5 +1,6 @@
 package com.guru.researchplatform.marketdatacollector.api.dto;
 
+import com.guru.researchplatform.collector.contract.ValidationResult;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 

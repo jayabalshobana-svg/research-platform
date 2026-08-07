@@ -1,10 +1,11 @@
-package com.guru.researchplatform.marketdatacollector.provider;
+package com.guru.researchplatform.collector.provider;
 
+import com.guru.researchplatform.collector.contract.ProviderMetadata;
 import com.guru.researchplatform.common.domain.Asset;
 import com.guru.researchplatform.common.enums.Exchange;
-import com.guru.researchplatform.marketdatacollector.api.dto.DownloadRequest;
-import com.guru.researchplatform.marketdatacollector.api.dto.DownloadResult;
-import com.guru.researchplatform.marketdatacollector.api.dto.ValidationResult;
+import com.guru.researchplatform.collector.contract.DownloadRequest;
+import com.guru.researchplatform.collector.contract.DownloadResult;
+import com.guru.researchplatform.collector.contract.ValidationResult;
 
 /**
  * Contract for a market data provider that fetches candlestick data from an exchange.

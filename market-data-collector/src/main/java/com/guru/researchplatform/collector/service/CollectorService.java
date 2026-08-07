@@ -1,9 +1,9 @@
-package com.guru.researchplatform.marketdatacollector.service;
+package com.guru.researchplatform.collector.service;
 
-import com.guru.researchplatform.marketdatacollector.api.dto.DownloadRequest;
-import com.guru.researchplatform.marketdatacollector.api.dto.DownloadResult;
-import com.guru.researchplatform.marketdatacollector.api.dto.ValidationResult;
-import com.guru.researchplatform.marketdatacollector.provider.MarketDataProvider;
+import com.guru.researchplatform.collector.contract.DownloadRequest;
+import com.guru.researchplatform.collector.contract.DownloadResult;
+import com.guru.researchplatform.collector.contract.ValidationResult;
+import com.guru.researchplatform.collector.provider.MarketDataProvider;
 
 import java.util.List;
 import java.util.Objects;

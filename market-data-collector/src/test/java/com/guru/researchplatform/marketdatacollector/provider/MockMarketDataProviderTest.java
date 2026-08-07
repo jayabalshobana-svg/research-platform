@@ -1,14 +1,16 @@
 package com.guru.researchplatform.marketdatacollector.provider;
 
+import com.guru.researchplatform.collector.provider.MockMarketDataProvider;
+import com.guru.researchplatform.collector.contract.ProviderMetadata;
 import com.guru.researchplatform.common.domain.Asset;
 import com.guru.researchplatform.common.domain.Candle;
 import com.guru.researchplatform.common.enums.AssetStatus;
 import com.guru.researchplatform.common.enums.Exchange;
 import com.guru.researchplatform.common.enums.MarketType;
 import com.guru.researchplatform.common.enums.Timeframe;
-import com.guru.researchplatform.marketdatacollector.api.dto.DownloadRequest;
-import com.guru.researchplatform.marketdatacollector.api.dto.DownloadResult;
-import com.guru.researchplatform.marketdatacollector.api.dto.ValidationResult;
+import com.guru.researchplatform.collector.contract.DownloadRequest;
+import com.guru.researchplatform.collector.contract.DownloadResult;
+import com.guru.researchplatform.collector.contract.ValidationResult;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

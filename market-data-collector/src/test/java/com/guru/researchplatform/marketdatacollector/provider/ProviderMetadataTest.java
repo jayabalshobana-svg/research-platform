@@ -1,5 +1,6 @@
 package com.guru.researchplatform.marketdatacollector.provider;
 
+import com.guru.researchplatform.collector.contract.ProviderMetadata;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 

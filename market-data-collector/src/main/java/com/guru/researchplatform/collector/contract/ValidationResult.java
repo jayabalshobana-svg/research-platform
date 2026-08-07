@@ -1,4 +1,4 @@
-package com.guru.researchplatform.marketdatacollector.api.dto;
+package com.guru.researchplatform.collector.contract;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.guru.researchplatform.marketdatacollector.api.dto;
+package com.guru.researchplatform.collector.contract;
 
 import com.guru.researchplatform.common.domain.Candle;
 import java.time.Instant;

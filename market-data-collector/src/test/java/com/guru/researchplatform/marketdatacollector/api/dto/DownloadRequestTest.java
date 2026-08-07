@@ -1,5 +1,6 @@
 package com.guru.researchplatform.marketdatacollector.api.dto;
 
+import com.guru.researchplatform.collector.contract.DownloadRequest;
 import com.guru.researchplatform.common.domain.Asset;
 import com.guru.researchplatform.common.enums.AssetStatus;
 import com.guru.researchplatform.common.enums.Exchange;
