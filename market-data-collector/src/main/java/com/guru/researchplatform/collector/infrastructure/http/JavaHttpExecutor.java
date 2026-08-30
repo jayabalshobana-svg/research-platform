@@ -58,6 +58,7 @@ public class JavaHttpExecutor implements HttpExecutor {
 
             // 5. Wrap everything neatly inside the infrastructure response object
             return new HttpResult<>(
+                    requestSpec.uri(),
                     rawResponse.statusCode(),
                     transformedBody,
                     rawResponse.headers().map(),
@@ -70,5 +71,53 @@ public class JavaHttpExecutor implements HttpExecutor {
             Thread.currentThread().interrupt();
             throw new HttpRequestException("HTTP Request execution interrupted for URI: " + requestSpec.uri(), e);
         }
+    }
+
+    @Override
+    public HttpResult<byte[]> download(HttpRequestSpec requestSpec) {
+        if (requestSpec == null || requestSpec.uri() == null) {
+            throw new HttpRequestException("Invalid request specification: URI cannot be null");
+        }
+
+        // 1. Create HttpRequest from Spec
+        HttpRequest.Builder requestBuilder = HttpRequest.newBuilder()
+                .uri(requestSpec.uri())
+                .GET();
+
+        if (requestSpec.headers() != null) {
+            requestSpec.headers().forEach(requestBuilder::header);
+        }
+
+        HttpRequest request = requestBuilder.build();
+
+        // 2. Track duration
+        Instant startTime = Instant.now();
+        try {
+            // 3. Always pull raw body as byte Array
+            java.net.http.HttpResponse<byte[]> rawResponse =
+                    httpClient.send(
+                            request,
+                            HttpResponse.BodyHandlers.ofByteArray()
+                    );
+
+            Instant endTime = Instant.now();
+            Duration duration = Duration.between(startTime, endTime);
+
+            // 4. Wrap everything neatly inside the infrastructure response object
+            return new HttpResult<>(
+                    requestSpec.uri(),
+                    rawResponse.statusCode(),
+                    rawResponse.body(),
+                    rawResponse.headers().map(),
+                    duration
+            );
+
+        } catch (IOException e) {
+            throw new HttpRequestException("Network infrastructure failure for URI: " + requestSpec.uri(), e);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+            throw new HttpRequestException("HTTP Request execution interrupted for URI: " + requestSpec.uri(), e);
+        }
+
     }
 }

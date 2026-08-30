@@ -1,6 +1,7 @@
 package com.guru.researchplatform.marketdatacollector.integration;
 
 import com.guru.researchplatform.collector.infrastructure.http.HttpExecutor;
+import com.guru.researchplatform.collector.infrastructure.http.HttpResult;
 import com.guru.researchplatform.collector.infrastructure.http.JavaHttpExecutor;
 import com.guru.researchplatform.collector.provider.binance.client.BinanceClient;
 import com.guru.researchplatform.collector.provider.binance.configuration.BinanceDefaults;
@@ -28,8 +29,14 @@ public class BinanceConnectionTest {
         BinanceClient client =
                 new BinanceClient(executor, properties);
 
-        client.ping();
+        HttpResult<String> result =
+                client.serverTime();
 
-        System.out.println("Binance connectivity successful.");
+        System.out.println("================================");
+        System.out.println("Binance Server Time Response");
+        System.out.println("================================");
+        System.out.println(result.body());
+        System.out.println("HTTP Status : " + result.statusCode());
+        System.out.println("Duration    : " + result.duration());
     }
 }

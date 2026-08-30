@@ -8,14 +8,16 @@ import java.time.Duration;
 import java.util.Objects;
 
 public record BinanceProperties(
-        URI baseUri,
+        URI apiBaseUri,
+        URI archiveBaseUri,
         Duration connectTimeout,
         Duration requestTimeout,
         String userAgent
 ) {
 
     public BinanceProperties {
-        Objects.requireNonNull(baseUri);
+        Objects.requireNonNull(apiBaseUri);
+        Objects.requireNonNull(archiveBaseUri);
         Objects.requireNonNull(connectTimeout);
         Objects.requireNonNull(requestTimeout);
         Objects.requireNonNull(userAgent);

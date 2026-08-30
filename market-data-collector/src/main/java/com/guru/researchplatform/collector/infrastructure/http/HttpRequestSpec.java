@@ -1,7 +1,5 @@
 package com.guru.researchplatform.collector.infrastructure.http;
 
-import org.springframework.http.HttpMethod;
-
 import java.net.URI;
 import java.time.Duration;
 import java.util.Map;
